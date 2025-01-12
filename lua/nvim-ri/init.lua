@@ -49,6 +49,8 @@ function M.show_ri_output()
   vim.api.nvim_buf_set_keymap(buf, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
 end
 
-vim.keymap.set("n", "<leader>kk", show_ri_output, { desc = "Run `ri` on word under cursor" })
+function M.setup()
+  vim.keymap.set("n", "<leader>kk", show_ri_output, { desc = "Run `ri` on word under cursor" })
+end
 
 return M
