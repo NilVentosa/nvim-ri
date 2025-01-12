@@ -1,6 +1,8 @@
 local ts_utils = require("nvim-treesitter.ts_utils")
 local ts = vim.treesitter
 
+local M = {}
+
 local function get_word_under_cursor()
 
   local node = ts_utils.get_node_at_cursor()
@@ -17,7 +19,7 @@ local function get_word_under_cursor()
 
 end
 
-local function show_ri_output()
+function M.show_ri_output()
 
   local word = get_word_under_cursor()
 
@@ -48,3 +50,5 @@ local function show_ri_output()
 end
 
 vim.keymap.set("n", "<leader>kk", show_ri_output, { desc = "Run `ri` on word under cursor" })
+
+return M
