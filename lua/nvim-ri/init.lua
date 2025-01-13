@@ -26,10 +26,10 @@ end
 
 local function get_word_under_cursor()
 
-  local word = get_word_under_cursor_with_ts
+  local word = get_word_under_cursor_with_ts()
 
   if not word then
-    word = get_word_under_cursor_with_regex
+    word = get_word_under_cursor_with_regex()
   end
 
   return word
